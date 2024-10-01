@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CustomApp.Models
+namespace CustomApp.Models;
+
+public partial class Agent
 {
-    public class Agent
-    {
-        public int AgentId { get; set; }
-        public string FIO { get; set; }
-        public string IDNumber { get; set; }
-    }
+    public int AgentId { get; set; }
+
+    public string FullName { get; set; } = null!;
+
+    public string IdNumber { get; set; } = null!;
+
+    public virtual ICollection<Fee> Fees { get; set; } = new List<Fee>();
 }

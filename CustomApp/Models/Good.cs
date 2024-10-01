@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CustomApp.Models
+namespace CustomApp.Models;
+
+public partial class Good
 {
-    public class Good
-    {
-        public int GoodId
-    }
+    public int GoodId { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public int GoodTypeId { get; set; }
+
+    public virtual ICollection<Fee> Fees { get; set; } = new List<Fee>();
+
+    public virtual GoodType GoodType { get; set; } = null!;
 }
