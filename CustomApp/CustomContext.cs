@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CustomApp;
 
-public partial class Db8279Context : DbContext
+public partial class CustomContext : DbContext
 {
-    public Db8279Context()
+    public CustomContext()
     {
     }
 
-    public Db8279Context(DbContextOptions<Db8279Context> options)
+    public CustomContext(DbContextOptions<CustomContext> options)
         : base(options)
     {
     }
@@ -25,10 +25,6 @@ public partial class Db8279Context : DbContext
     public virtual DbSet<GoodType> GoodTypes { get; set; }
 
     public virtual DbSet<Warehouse> Warehouses { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=db8279.public.databaseasp.net; Database=db8279; User Id=db8279; Password=Qp7#5X%n-cK8; Encrypt=True; TrustServerCertificate=True; MultipleActiveResultSets=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
